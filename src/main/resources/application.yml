@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: demo
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/dewdrop?autoReconnect=true&useSSL=false&createDatabaseIfNotExist=true
+    username: postgres
+    password: postgres
+  jpa:
+    database: POSTGRESQL
+    generate-ddl: true
+    show-sql: false
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        jdbc:
+          lob:
+            non_contextual_creation: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: dewdrop_db2
